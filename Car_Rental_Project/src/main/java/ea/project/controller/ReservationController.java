@@ -43,7 +43,7 @@ public class ReservationController
 		Users user=new Users();
 		PersonalDetail per=new PersonalDetail();
 		Customer cust=new Customer();
-		per.setFirstName("Swoven");
+		/*per.setFirstName("Swoven");
 		per.setLastName("Pokharel");
 		CreditCard card=new CreditCard();
 //		card.creditcardType="Visa";
@@ -51,13 +51,17 @@ public class ReservationController
 //		cust.setCreditCard(card);
 		user.setCustomer(cust);
 		//Test Code End
-		Vehicle vehicle=vehicleService.findVehicleById(id);
+*/		Vehicle vehicle=vehicleService.findVehicleById(id);
 		HttpSession session=request.getSession();
 		session.setAttribute("vehicle", vehicle);
 		session.setAttribute("vehicleId", id);
+		cust=(Customer)session.getAttribute("customer");
+		System.out.println(cust.getUsername());
+		System.out.println(cust);
 		//test again
 		session.setAttribute("user", user);
 		model.addAttribute("reservationForm", reservation);
+		
 		return "ReservationForm";
 	}
 	

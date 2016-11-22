@@ -82,9 +82,9 @@ public class Reservation implements Serializable
 	public double calculateCost(Date start, Date end, double price){
 		
 		int days=(int)(end.getTime()-start.getTime())/(1000*60*60*24);
-		System.out.println(price*days);
-		return price*days;
-		
+		double totPrice = price + price*days;
+		System.out.println(totPrice);
+		return totPrice;
 	}
 
 	public double getCost() {

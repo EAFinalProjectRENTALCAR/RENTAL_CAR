@@ -38,9 +38,7 @@
           <input type="submit" value="Confirm" />
           </form:form>
   			<br>
-          <form:form action="payment/cancelReservation" method="get">
-          <input type="submit" value="Cancel" />
-          </form:form>
+          <spring:url value="/vehicle/showVehicle" var="url" /><a href="${url}"><button>Cancel</button></a>
           
     </div>
 </body>

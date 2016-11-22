@@ -17,6 +17,8 @@ import org.hibernate.validator.constraints.Range;
 
 import org.springframework.web.multipart.MultipartFile;
 
+import ea.project.customValidator.VehicleId;
+
 /**
  * @author Bharat Pandey
  *
@@ -33,25 +35,33 @@ public class Vehicle implements Serializable {
 	Integer id;
 	
 	@NotNull
-	@Range(min = 104, max = 999, message="{Vehicle.vehicleId.validation}")
+	@VehicleId	// @VehicleId is a CustomValidator
 	private Integer vehicleId;
+	
 	@OneToOne
 	private VehicleClass vehicleClass;
+	
 	@OneToOne
 	private Category category;
+	
 	@NotBlank
 	@Size(min=4, max=20, message="{Vehicle.description.validation}")	
 	private String description;
+	
 	@NotNull
 	@Range(min = 1, max = 10, message="{Vehicle.capacity.validation}")
 	private Integer capacity;
+	
 	@NotNull
 	@Range(min = 1, max = 3, message="{Vehicle.bags.validation}")
 	private Integer bags; 
+	
 	@NotNull
 	private Double price;
+	
 	@NotEmpty
 	private String specialFeatures;
+	
 	@Transient
 	private MultipartFile  vehicleImage;
 	

@@ -6,15 +6,16 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <!-- <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.min.js"></script> -->
-<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+<!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css"> -->
 <script src="//code.jquery.com/jquery-1.10.2.js"></script>
 <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 <script type="text/javascript" src="<spring:url value="/resources/js/isAvailable.js"/>"></script>
-<script>
+<script type="text/javascript" src="<spring:url value="/resources/js/dateValidation.js"/>"></script>
+<!-- <script>
 	$(function() {
 		$(".datepicker").datepicker();
 	});
-</script>
+</script> -->
 <title>Vehicle Details</title>
 </head>
 <body>
@@ -38,17 +39,17 @@
 		<h2 id="yes" style="color:green; display:none">Congratulation! The selected Vehicle is AVAILABLE!</h2>
 		<form id="checkForm">
 			<p>
-			Checkout Date:
-			<input id="checkoutDate" class="datepicker" name="checkoutDate" type="text"/>
+			Pickup Date:
+			<input id="checkoutDate" name="checkoutDate" type="text"/>
 			</p>
 			<p>
 			Return Date:
-			<input id="returnDate" class="datepicker" name="returnDate" type="text" />
+			<input id="returnDate" name="returnDate" type="text" />
 			</p>
 			<%-- <input id="vehicleId" type="hidden" value="${vehicle.vehicleId}"> --%>
 			<button onclick="isAvailable(${vehicle.vehicleId});return false;" >Submit</button>			
 		</form>
-		<a href="<spring:url value="../reservation?id=${vehicle.vehicleId}"/>">
+		<a href="<spring:url value="/reservation?id=${vehicle.vehicleId}"/>">
 			<button id="book" style="display:none">Book Now</button></a>		
 	</div>
 </body>

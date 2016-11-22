@@ -26,8 +26,8 @@ public class Users {
 	@Length(min=6, message="Password should be more than 5 characters")
 	private String password;
 	
-	@OneToOne
-	@JoinColumn(name = "customerId")
+	//@OneToOne
+	//@JoinColumn(name = "customerId")
 	private Customer customer;
 	
 	 public int getUsersId() {

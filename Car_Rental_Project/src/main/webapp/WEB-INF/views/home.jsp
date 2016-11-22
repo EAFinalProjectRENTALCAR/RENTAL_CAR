@@ -2,7 +2,7 @@
 <%@ page session="false" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags"%>
 <html>
 <head>
 	<title>Home</title>
@@ -10,6 +10,15 @@
 <body>
 <spring:url value="/vehicle/addVehicle" var="url" />
 		<a href="${url}"><button>Add Vehicle</button></a>
+<spring:url value="/addCustomer" var="cus" />
+		<a href="${cus}"><button>Join Now</button></a>
+
+<!-- spring security -->
+<security:authorize access="isAuthenticated()">
+		<spring:url value="/doLogout" var="lg" />
+		<a href="${lg}"><button style="margin: 10px">Logout</button></a>
+</security:authorize>
+	
 <h1>Car Rental Agency </h1>
 <div style = "text-align:center">
 	<c:forEach items="${vehicles}" var="vehicle">
@@ -22,8 +31,12 @@
 			<p>
 				<a href=" <spring:url value="/vehicle/vehicleDetail?id=${vehicle.vehicleId}" /> ">
 				<button>See Details</button></a>
-				<a href=" <spring:url value="/vehicle/removeVehicle?id=${vehicle.id}" /> ">
-				<button>Remove</button></a>
+				
+				<!-- spring security -->
+				<security:authorize access="hasRole('ROLE_ADMIN')">
+					<a href=" <spring:url value="/vehicle/removeVehicle?id=${vehicle.id}" /> ">
+					<button>Remove</button></a>
+				</security:authorize>
 			</p>
 		</div>
 	</c:forEach>

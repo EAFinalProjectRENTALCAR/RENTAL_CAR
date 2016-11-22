@@ -68,6 +68,7 @@ public class ReservationDAOImpl implements IReservationDAO
 		
 	}
 	
+	@SuppressWarnings("unused")
 	@Override
 	public Boolean isAvailable(Integer vehicleId, Date checkoutDate, Date returnDate) {
 		Reservation reservation = null;
@@ -79,11 +80,14 @@ public class ReservationDAOImpl implements IReservationDAO
 		query.setParameter("vehicleID", vehicleId);
 		query.setParameter("checkOutDate", checkoutDate, TemporalType.DATE);
 		query.setParameter("returnDate", returnDate, TemporalType.DATE);
+		
 		reservation = query.getSingleResult();
-		System.out.println("-------" + checkoutDate);
+		
+		System.out.println("---checkoutDate----" + checkoutDate);
 		System.out.println(reservation.getPickUpDate());
-		System.out.println("-------" + returnDate);
+		System.out.println("---returnDate----" + returnDate);
 		System.out.println(reservation.getReturnDate());
+		
 		if(reservation != null)
 			return false;
 		else

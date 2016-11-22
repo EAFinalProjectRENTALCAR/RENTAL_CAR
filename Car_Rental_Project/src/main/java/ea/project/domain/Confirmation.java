@@ -23,7 +23,7 @@ public class Confirmation implements Serializable
 {
 
 	/**
-	 * 
+	 * test
 	 */
 	private static final long serialVersionUID = -8276340068505700851L;
 	
@@ -31,13 +31,13 @@ public class Confirmation implements Serializable
 	private int id;
 	@Column(name="ConfirmationNumber")
 	private long confirmationNumber;
-	@OneToOne(cascade=CascadeType.ALL)
-	@JoinColumn(name="Customer_Id")
+	
+	@javax.persistence.Transient
 	private Users user;
-	@OneToOne(cascade=CascadeType.ALL)
+	@OneToOne
 	@JoinColumn(name="Vehicle_Id")
 	private Vehicle vehicle;
-	@OneToOne(cascade=CascadeType.ALL)
+	@OneToOne
 	@JoinColumn(name="Reservation_Id")
 	private Reservation reservation;
 	

@@ -1,11 +1,11 @@
 package ea.project.domain;
 
-import javax.persistence.OneToOne;
+import javax.persistence.Embeddable;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
-
+@Embeddable
 public class BillingAddress {
 	
 	@NotEmpty(message="The street name must not be null")
@@ -24,9 +24,6 @@ public class BillingAddress {
 	@Pattern(regexp="[0-9]+", message="Wrong zip")
 	private String zipCode;
 	
-	@OneToOne
-    private Customer customer;
-
     public String getStreetName() {
         return streetName;
     }
@@ -65,14 +62,6 @@ public class BillingAddress {
 
     public void setZipCode(String zipCode) {
         this.zipCode = zipCode;
-    }
-
-    public Customer getCustomer() {
-        return customer;
-    }
-
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
     }
 
 

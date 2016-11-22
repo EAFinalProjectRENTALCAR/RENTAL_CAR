@@ -29,7 +29,8 @@ public class VehicleRestController {
 			isAvailable = vehicleService.isAvailable(vehicleId, checkoutDate, returnDate);
 			System.out.println("=======================REST between ..." + isAvailable);
 		}catch (Exception e) {
-			e.printStackTrace();
+//			e.printStackTrace();
+			return true;
 		}
 		System.out.println("=======================REST after ..." + isAvailable);
 		return isAvailable;		
