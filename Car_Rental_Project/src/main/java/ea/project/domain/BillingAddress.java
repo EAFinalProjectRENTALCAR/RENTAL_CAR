@@ -1,11 +1,12 @@
 package ea.project.domain;
 
+import javax.persistence.Embeddable;
 import javax.persistence.OneToOne;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
-
+@Embeddable
 public class BillingAddress {
 	
 	@NotEmpty(message="The street name must not be null")

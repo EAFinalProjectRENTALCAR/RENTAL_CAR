@@ -2,6 +2,7 @@ package ea.project.domain;
 
 import java.util.Date;
 
+import javax.persistence.Embeddable;
 import javax.persistence.Lob;
 import javax.validation.constraints.Future;
 import javax.validation.constraints.Past;
@@ -11,6 +12,7 @@ import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.format.annotation.DateTimeFormat;
 
+@Embeddable
 public class PersonalDetail {
 	@NotEmpty(message="The first name must not be null")
 	private
@@ -50,12 +52,12 @@ public class PersonalDetail {
 	@Pattern(regexp = "\\d{3}[-\\.\\s]\\d{3}[-\\.\\s]\\d{4}", message = "Incorrect Phone Format")
 	private String customerPhone;
 
-	@NotEmpty(message = "The customer username must not be null")
-	private String username;
-
-	@NotEmpty(message = "The customer password must not be null")
-	@Length(min = 6, message = "Password should be more than 5 characters")
-	private String password;
+//	@NotEmpty(message = "The customer username must not be null")
+//	private String username;
+//
+//	@NotEmpty(message = "The customer password must not be null")
+//	@Length(min = 6, message = "Password should be more than 5 characters")
+//	private String password;
 	
 	//Driver license
 	@NotEmpty(message = "The customer password must not be null")
@@ -118,21 +120,21 @@ public class PersonalDetail {
 		this.customerPhone = customerPhone;
 	}
 
-	public String getUsername() {
-		return username;
-	}
-
-	public void setUsername(String username) {
-		this.username = username;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
+//	public String getUsername() {
+//		return username;
+//	}
+//
+//	public void setUsername(String username) {
+//		this.username = username;
+//	}
+//
+//	public String getPassword() {
+//		return password;
+//	}
+//
+//	public void setPassword(String password) {
+//		this.password = password;
+//	}
 
 	public String getDriverLicenceNumber() {
 		return driverLicenceNumber;

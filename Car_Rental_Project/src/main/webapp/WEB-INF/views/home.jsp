@@ -2,7 +2,6 @@
 <%@ page session="false" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-
 <html>
 <head>
 	<title>Home</title>
@@ -20,13 +19,12 @@
 			<h4>${vehicle.description}</h4>
 			<p>Price: $${vehicle.price}</p>
 			<p>
-				<a href=" <spring:url value="/vehicle/vehicleDetail?id=${vehicle.vehicleId}" /> ">
-				<button>See Details</button></a>
-				<a href=" <spring:url value="/vehicle/removeVehicle?id=${vehicle.id}" /> ">
-				<button>Remove</button></a>
+				<a href=" <spring:url value="/vehicle/vehicleDetail?id=${vehicle.vehicleId}" /> "><button>See Details</button></a>
+				<a href="<spring:url value="/reservation?id=${vehicle.vehicleId}"/>"><button>Book Now</button></a>
 			</p>
 		</div>
 	</c:forEach>
 </div>
+<div><a href="login">Login</a></div>
 </body>
 </html>
