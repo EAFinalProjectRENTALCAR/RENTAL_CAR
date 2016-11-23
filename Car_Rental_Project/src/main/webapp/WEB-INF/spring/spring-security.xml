@@ -42,6 +42,7 @@
 
 	<security:authentication-manager>
 		<security:authentication-provider>
+
 			<!-- jdbc -->
 			<security:jdbc-user-service data-source-ref="secDataSource"
 				users-by-username-query="select username, password, enabled  from customer where username = ?"

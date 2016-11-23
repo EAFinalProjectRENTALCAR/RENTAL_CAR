@@ -54,6 +54,7 @@ public class CustomerController {
 		customer.setEnabled(true);
 		customerService.addCustomer(customer);
 		request.getSession().setAttribute("customer", customer);
+		//System.out.println(customerService.findCustomerByUsername(customer.getUsername()));
 		redirectAttributes.addFlashAttribute(customer);
 		return "redirect:/login";
 	}

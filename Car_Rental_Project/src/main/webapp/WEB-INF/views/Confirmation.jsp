@@ -25,11 +25,11 @@
             </tr>
             <tr>
                 <td>First Name:</td>
-                <td>${sessionScope.user.customer.personalDetail.firstName}</td>
+                <td>${sessionScope.customer.personalDetail.firstName}</td>
             </tr>
             <tr>
                 <td>Last Name:</td>
-                <td>${sessionScope.user.customer.personalDetail.lastName}</td>
+                <td>${sessionScope.customer.personalDetail.lastName}</td>
             </tr>
             <tr>
                 <td>Vehicle :</td>

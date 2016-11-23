@@ -14,8 +14,8 @@ public class BillingAddress {
 	@NotEmpty
 	private String city;
 	
-	@NotEmpty
-	private String state;
+	/*@NotEmpty
+	private String state;*/
 	
 	@NotEmpty
 	private String country;
@@ -39,13 +39,13 @@ public class BillingAddress {
         this.city = city;
     }
 
-    public String getState() {
+ /*   public String getState() {
         return state;
     }
 
     public void setState(String state) {
         this.state = state;
-    }
+    }*/
 
     public String getCountry() {
         return country;
@@ -69,7 +69,7 @@ public class BillingAddress {
         return "BillingAddress{" +
                 "streetName='" + streetName + '\'' +
                 ", city='" + city + '\'' +
-                ", state='" + state + '\'' +
+                + '\'' +
                 ", country='" + country + '\'' +
                 ", zipCode='" + zipCode + '\'' +
                 '}';

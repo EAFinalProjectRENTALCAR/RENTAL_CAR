@@ -15,8 +15,8 @@ public class CreditCard {
 	
 	private String creditcardType;
 	
-	@Pattern(regexp = "\\d{11}", message = "{CreditCard.creditCardNumber}")
-	@CreditCardNumber
+	@Pattern(regexp = "\\d{16}", message = "{CreditCard.creditCardNumber}")
+	//@CreditCardNumber
 	private String creditCardNumber;
 	
 	 @DateTimeFormat(pattern = "mm/dd/yyyy")

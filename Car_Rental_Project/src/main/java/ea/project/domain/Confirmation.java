@@ -3,7 +3,6 @@ package ea.project.domain;
 import java.beans.Transient;
 import java.io.Serializable;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -20,8 +19,7 @@ import javax.persistence.OneToOne;
 
 @Entity
 public class Confirmation implements Serializable 
-{
-
+{	
 	/**
 	 * test
 	 */
@@ -32,8 +30,9 @@ public class Confirmation implements Serializable
 	@Column(name="ConfirmationNumber")
 	private long confirmationNumber;
 	
-	@javax.persistence.Transient
-	private Users user;
+	@OneToOne
+	@JoinColumn(name="Customer_Id")
+	private Customer customer;
 	@OneToOne
 	@JoinColumn(name="Vehicle_Id")
 	private Vehicle vehicle;
@@ -61,12 +60,12 @@ public class Confirmation implements Serializable
 		this.confirmationNumber = confirmationNumber;
 	}
 
-	public Users getUsers() {
-		return user;
+	public Customer getCustomer() {
+		return customer;
 	}
 
-	public void setUsers(Users users) {
-		this.user = users;
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
 	}
 
 	public Vehicle getVehicle() {
@@ -85,8 +84,11 @@ public class Confirmation implements Serializable
 		this.reservation = reservation;
 	}
 	
+	/**
+	 * @return long value
+	 * Generating random number between 99 and 9999 for confirmation Number
+	 */
 	@Transient
-	//Generating random number between 99 and 9999 for confirmation Number
 	public long createRandom(){
 		long rand= (long)Math.floor(Math.random()*9999)+99;
 		return rand;
