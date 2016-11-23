@@ -108,10 +108,11 @@
 				    <td>Driver Licence Using Country Or State: *</td>
 				    <td><span id="spryselect5">
 				      <label>
-				      <select name="cbDriverLicenceUsingCountryOrState" id="cbDriverLicenceUsingCountryOrState">
-				        <option value="United State - Alaska">United State - Alaska</option>
-				        <option value="United State - FairField">United State - FairField</option>
-				      </select>
+				      
+				      		<form:select path="billingAddress.state">
+				                <form:option value="United State - Alaska">United State - Alaska"</form:option>
+				                <form:option value="United State - FairField">United State - FairField</form:option>			              
+				            </form:select>
 				      </label></span></td>
 				     <%--  <td><form:errors path="billingAddress.state" cssClass="error" /> </td> --%>
 				  </tr>
@@ -161,10 +162,12 @@
 				  
 				  <tr>
 				    <td>Country: *</td>
-				    <td><select name="cbCountry" id="cbCountry">
-				      <option value="United State - Alaska">United State - Alaska</option>
-				      <option value="United State - FairField">United State - FairField</option>
-				    </select></td>
+				    <td>
+				    	<form:select path="billingAddress.country">
+				                <form:option value="United State">United State</form:option>
+				                <form:option value="Australia">Australia</form:option>			              
+				        </form:select>
+				    </td>
 				    <%-- <td><form:errors path="billingAddress.country" cssClass="error" /> </td> --%>
 				  </tr>
 				  <tr>
@@ -180,13 +183,11 @@
 				  
 				  <tr>
 				    <td>Credit Card Type: *</td>
-				    <td><span id="spryselect6">
-				      <label>
-				      <select name="cbCreditCardType" id="cbCreditCardType">
-				        <option value="AirPlus">AirPlus</option>
-				        <option value="Visa">Visa</option>
-				      </select>
-				      </label></span></td>
+				    <td><form:select path="creditCard.creditcardType">
+				                <form:option value="United State - Alaska">Visa</form:option>
+				                <form:option value="United State - FairField">Amex</form:option>			              
+				            </form:select>
+				    </td>
 				       <%-- <td><form:errors path="creditCard.creditcardType" cssClass="error" /> </td> --%>
 				  </tr>
 				
@@ -208,7 +209,7 @@
 				  <tr>
 				    <td>&nbsp;</td>
 				    <td><input type="submit" name="btnbutton" id="btnbutton" value="Submit" />
-						<button>Cancel</button></a>
+						<button>Cancel</button>
 				    <td></td>
 				  </tr>
 				  <tr>

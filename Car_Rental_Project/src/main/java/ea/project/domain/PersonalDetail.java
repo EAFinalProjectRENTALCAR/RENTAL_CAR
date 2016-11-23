@@ -31,7 +31,7 @@ public class PersonalDetail {
 	String lastName;
 	
     @Past(message="Input valid date of birth date")
-    @DateTimeFormat(pattern = "mm-dd-yyyy")
+    @DateTimeFormat(pattern = "mm/dd/yyyy")
     @Temporal(TemporalType.DATE)
 	private Date dateOfBirth;
 		
@@ -53,8 +53,8 @@ public class PersonalDetail {
 	private String driverLicenceUsingCountryOrState;
 	
 	@Temporal(TemporalType.DATE)
-	 @DateTimeFormat(pattern = "mm-dd-yyyy")
-	@Future(message="The expired date is future date")
+	 @DateTimeFormat(pattern = "mm/dd/yyyy")
+	//@Future(message="The expired date is future date")
 	private Date driverLicenceNumberExpirationDate;
 	
 	
