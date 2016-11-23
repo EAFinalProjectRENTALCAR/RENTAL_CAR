@@ -18,6 +18,17 @@
 				$(".datepicker1").datepicker();
 			});
 		</script>
+		<style>
+			.error {
+				padding: 2px;
+				margin-bottom: 20px;
+				border: 1px solid transparent;
+				border-radius: 4px;
+				color: #a94442;
+				background-color: #f2dede;
+				border-color: #ebccd1;
+			}
+		</style>
 	</head>
     <body>
        <form:form modelAttribute="newCustomer" method="post">
@@ -36,8 +47,8 @@
 				    </td>
 				  </tr>
 				  <tr>
-				    <td width="294">First Name: *</td>
-				    <td width="530">
+				    <td width="30%">First Name: *</td>
+				    <td width="70%">
 				      <form:input id="personalDetail.firstName" type="text" path="personalDetail.firstName" />
 				      <form:errors path="personalDetail.firstName" cssClass="error" />				  
 				    </td>
@@ -107,10 +118,9 @@
 				  <tr>
 				    <td>Driver Licence Using Country Or State: *</td>
 				    <td><span id="spryselect5">
-				      <label>
-				      
-				      		<form:select path="billingAddress.state">
-				                <form:option value="United State - Alaska">United State - Alaska"</form:option>
+				      <label>				      
+				      		<form:select path="personalDetail.driverLicenceUsingCountryOrState">
+				                <form:option value="United State - Alaska">United State - Alaska</form:option>
 				                <form:option value="United State - FairField">United State - FairField</form:option>			              
 				            </form:select>
 				      </label></span></td>
@@ -182,11 +192,21 @@
 				  </tr>
 				  
 				  <tr>
+				    <td>Credit Card Number: *</td>
+					<td>
+						<form:input id="creditCard.creditCardNumber" type="text" path="creditCard.creditCardNumber" />
+						<form:errors path="creditCard.creditCardNumber" cssClass="error" />
+					</td>
+					<td></td>
+				  </tr>
+				  
+				  <tr>
 				    <td>Credit Card Type: *</td>
-				    <td><form:select path="creditCard.creditcardType">
-				                <form:option value="United State - Alaska">Visa</form:option>
-				                <form:option value="United State - FairField">Amex</form:option>			              
-				            </form:select>
+				    <td>
+				    	<form:select path="creditCard.creditcardType">
+				                <form:option value="Visa">Visa</form:option>
+				                <form:option value="Amex">Amex</form:option>			              
+				         </form:select>
 				    </td>
 				       <%-- <td><form:errors path="creditCard.creditcardType" cssClass="error" /> </td> --%>
 				  </tr>
