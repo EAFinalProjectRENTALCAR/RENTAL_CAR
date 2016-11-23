@@ -30,72 +30,80 @@
 				  </tr>
 				  <tr>
 				    <td>Title: *</td>
-				    <td><form:input id="personalDetail.title" type="text" path="personalDetail.title" />	</td>
-				      <td><form:errors path="personalDetail.title" cssClass="error" /> </td>
+				    <td>
+					    <form:input id="personalDetail.title" type="text" path="personalDetail.title" />
+					    <form:errors path="personalDetail.title" cssClass="error" />	
+				    </td>
 				  </tr>
 				  <tr>
 				    <td width="294">First Name: *</td>
 				    <td width="530">
-				      <form:input id="personalDetail.firstName" type="text" path="personalDetail.firstName" />				  
+				      <form:input id="personalDetail.firstName" type="text" path="personalDetail.firstName" />
+				      <form:errors path="personalDetail.firstName" cssClass="error" />				  
 				    </td>
-				    <td><form:errors path="personalDetail.firstName" cssClass="error" /> </td>
 				  </tr>
 				  <tr>
 				    <td>Middle Name: *</td>
 				    <td>
-				      <form:input id="personalDetail.middleName" type="text" path="personalDetail.middleName" />		
+				      <form:input id="personalDetail.middleName" type="text" path="personalDetail.middleName" />
+				      <form:errors path="personalDetail.middleName" cssClass="error" />		
 				    </td>
-				    <td><form:errors path="personalDetail.middleName" cssClass="error" /> </td>
 				  </tr>
 				  <tr>
 				    <td>Last Name: *</td>
 				    <td>
-				      <form:input id="personalDetail.lastName" type="text" path="personalDetail.lastName" />		
+				      <form:input id="personalDetail.lastName" type="text" path="personalDetail.lastName" />	
+				      <form:errors path="personalDetail.lastName" cssClass="error" />	
 				    </td>
-				    <td><form:errors path="personalDetail.lastName" cssClass="error" /> </td>
 				  </tr>
 				  <tr>
 				    <td>Date Of Birth: *</td>
-				    <td><form:input path="personalDetail.dateOfBirth" class="datepicker1" /></td>
-	
-				      <td><form:errors path="personalDetail.dateOfBirth" cssClass="error" /> </td>
+				    <td>
+				    	<form:input path="personalDetail.dateOfBirth" class="datepicker1" />
+				    	<form:errors path="personalDetail.dateOfBirth" cssClass="error" />
+				    </td>
 				  </tr>
 				  
 				  <tr>
 				    <td>Customer Email: *</td>
 				    <td>
-				      <form:input id="personalDetail.customerEmail" type="text" path="personalDetail.customerEmail" />		
+				      <form:input id="personalDetail.customerEmail" type="text" path="personalDetail.customerEmail" />	
+				      <form:errors path="personalDetail.customerEmail" cssClass="error" />	
 				    </td>
-				    <td><form:errors path="personalDetail.customerEmail" cssClass="error" /> </td>
+
 				  </tr>
 				   <tr>
 				    <td>Customer Phone: *</td>
 				    <td>
-				      <form:input id="personalDetail.customerPhone" type="text" path="personalDetail.customerPhone" />		
+				      <form:input id="personalDetail.customerPhone" type="text" path="personalDetail.customerPhone" />	
+				      <form:errors path="personalDetail.customerPhone" cssClass="error" />	
 				    </td>
-				    <td><form:errors path="personalDetail.customerPhone" cssClass="error" /> </td>
 				  </tr>
+				  
 				  <tr>
 				    <td>User Name: *</td>
 				    <td>
-				      <form:input id="username" type="text" path="username" />		
+				      <form:input id="username" type="text" path="username" />	
+				      <form:errors path="username" cssClass="error" />	
 				    </td>
-				    <td><form:errors path="username" cssClass="error" /> </td>
 				  </tr>
+				  
 				  <tr>
 				    <td>Password: *</td>
 				    <td>
-				      <form:input id="password" type="password" path="password" />		
+				      <form:input id="password" type="password" path="password" />
+				      <form:errors path="password" cssClass="error" /> 		
 				    </td>
-				    <td><form:errors path="password" cssClass="error" /> </td>
 				  </tr>
+				  
 				  <tr>
 				    <td>Drivers License Number:*</td>
 				    <td>
-				      <form:input id="personalDetail.driverLicenceNumber" type="text" path="personalDetail.driverLicenceNumber" />		
+				      <form:input id="personalDetail.driverLicenceNumber" type="text" path="personalDetail.driverLicenceNumber" />	
+				      <form:errors path="personalDetail.driverLicenceNumber" cssClass="error" />	
 				    </td>
-				    <td><form:errors path="personalDetail.driverLicenceNumber" cssClass="error" /> </td>
 				  </tr>
+				  
 				  <tr>
 				    <td>Driver Licence Using Country Or State: *</td>
 				    <td><span id="spryselect5">
@@ -105,46 +113,50 @@
 				        <option value="United State - FairField">United State - FairField</option>
 				      </select>
 				      </label></span></td>
-				      <td><form:errors path="billingAddress.state" cssClass="error" /> </td>
+				     <%--  <td><form:errors path="billingAddress.state" cssClass="error" /> </td> --%>
 				  </tr>
 				  <tr>
 				   <td>Driver License Expiration Date: *</td>
 				    <td>
 				      	  <form:input path="personalDetail.driverLicenceNumberExpirationDate" class="datepicker1" />
+				      	  <form:errors path="personalDetail.driverLicenceNumberExpirationDate" cssClass="error" />
 				     </td>
-				     <td><form:errors path="personalDetail.driverLicenceNumberExpirationDate" cssClass="error" /> </td>
 				  </tr>
+				  
 				  <tr>
 				    <td>&nbsp;</td>
 				    <td>&nbsp;</td>
 				    <td>&nbsp;</td>
 				  </tr>
+				  
 				  <tr>
 				    <td><strong>Billing Address</strong></td>
 				    <td>&nbsp;</td>
 				    <td>&nbsp;</td>
 				  </tr>
+				  
 				  <tr>
 				    <td>Address: *</td>
 				    <td>
-				      <form:input id="billingAddress.streetName" type="text" path="billingAddress.streetName" />		
+				      <form:input id="billingAddress.streetName" type="text" path="billingAddress.streetName" />	
+				      <form:errors path="billingAddress.streetName" cssClass="error" />	
 				    </td>
-				    <td><form:errors path="billingAddress.streetName" cssClass="error" /> </td>
 				  </tr>
+				  
 				  <tr>
 				    <td>City: *</td>
 				    <td>
-				      <form:input id="billingAddress.city" type="text" path="billingAddress.city" />		
+				      <form:input id="billingAddress.city" type="text" path="billingAddress.city" />
+				      <form:errors path="billingAddress.city" cssClass="error" />		
 				    </td>
-				    <td><form:errors path="billingAddress.city" cssClass="error" /> </td>
 				  </tr>
 				  
 				  <tr>
 				    <td>Zip Code: *</td>
 				    <td>
-				      <form:input id="billingAddress.zipCode" type="text" path="billingAddress.zipCode" />		
+				      <form:input id="billingAddress.zipCode" type="text" path="billingAddress.zipCode" />
+				      <form:errors path="billingAddress.zipCode" cssClass="error" />		
 				    </td>
-				    <td><form:errors path="billingAddress.zipCode" cssClass="error" /> </td>
 				  </tr>
 				  
 				  <tr>
@@ -153,7 +165,7 @@
 				      <option value="United State - Alaska">United State - Alaska</option>
 				      <option value="United State - FairField">United State - FairField</option>
 				    </select></td>
-				    <td><form:errors path="billingAddress.country" cssClass="error" /> </td>
+				    <%-- <td><form:errors path="billingAddress.country" cssClass="error" /> </td> --%>
 				  </tr>
 				  <tr>
 				    <td>&nbsp;</td>
@@ -175,14 +187,17 @@
 				        <option value="Visa">Visa</option>
 				      </select>
 				      </label></span></td>
-				       <td><form:errors path="creditCard.creditcardType" cssClass="error" /> </td>
+				       <%-- <td><form:errors path="creditCard.creditcardType" cssClass="error" /> </td> --%>
 				  </tr>
 				
 				  <tr>
 				    <td>Credit Card Expiration Date: *</td>
 				 
-				      <td><form:input path="creditCard.creditCardExpirationDate" class="datepicker1" /></td>
-				      <form:errors path="creditCard.creditCardExpirationDate" cssClass="error" />
+				      <td>
+				      	<form:input path="creditCard.creditCardExpirationDate" class="datepicker1" />
+				      	<form:errors path="creditCard.creditCardExpirationDate" cssClass="error" />
+				      </td>
+				      
 				  </tr>
 				  <tr>
 				    <td>&nbsp;</td>
@@ -193,8 +208,7 @@
 				  <tr>
 				    <td>&nbsp;</td>
 				    <td><input type="submit" name="btnbutton" id="btnbutton" value="Submit" />
-				    <spring:url value="/vehicle/showVehicle" var="show" />
-					<a href="${show}"><button>Cancel</button></a>
+						<button>Cancel</button></a>
 				    <td></td>
 				  </tr>
 				  <tr>

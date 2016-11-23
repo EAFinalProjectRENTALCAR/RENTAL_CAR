@@ -9,8 +9,16 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.Valid;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
 @Entity
+@Component
+@Scope("session")
 public class Customer implements Serializable {
 
 	/**
@@ -23,23 +31,22 @@ public class Customer implements Serializable {
 	private int customerId;
 
 	@Embedded
-//	@Valid
+	@Valid
 	private PersonalDetail personalDetail;
 	
 	@Embedded
-//	@Valid
+	@Valid
 	private BillingAddress billingAddress;
 	
 	@Embedded
-//	@Valid
+	@Valid
 	private CreditCard creditCard;
 	
 	@Column(unique = true, nullable=false) 
-//	@NotEmpty(message = "The customer username must not be null")
+	@NotEmpty(message = "The customer username must not be null")
 	private String username;
 
-//	@NotEmpty(message = "The customer password must not be null")
-//	@Length(min = 6, message = "Password should be more than 5 characters")
+	@Size(min = 6, message = "Password should be more than 5 characters")
 	private String password;
 	
 	public enum Role {

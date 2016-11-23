@@ -14,7 +14,7 @@ public class LoginController {
 	/*@RequestMapping(value="/login", method = RequestMethod.GET)
 	public String login() { 		
 		return "login";
-	}*/
+	}*/ 
 	
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public ModelAndView login(@RequestParam(value = "error", required = false) String error,

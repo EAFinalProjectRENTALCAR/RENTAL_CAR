@@ -1,7 +1,12 @@
 package ea.project.domain;
 
+import java.util.Date;
+
 import javax.persistence.Embeddable;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.constraints.Future;
+
 import org.hibernate.validator.constraints.CreditCardNumber;
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -14,11 +19,10 @@ public class CreditCard {
 	@CreditCardNumber
 	private String creditCardNumber;
 	
-	@DateTimeFormat(pattern="MM/dd/yyyy")
-    @Future
-   // @NotEmpty(message="The credit card expiration date must not be null")
-	private
-	String creditCardExpirationDate;
+	 @DateTimeFormat(pattern = "mm-dd-yyyy")
+    @Future(message="The expired date is future date")
+	@Temporal(TemporalType.DATE)
+	private Date creditCardExpirationDate;
 	
 	public String getCreditcardType() {
 		return creditcardType;
@@ -32,10 +36,10 @@ public class CreditCard {
 	public void setCreditCardNumber(String creditCardNumber) {
 		this.creditCardNumber = creditCardNumber;
 	}
-	public String getCreditCardExpirationDate() {
+	public Date getCreditCardExpirationDate() {
 		return creditCardExpirationDate;
 	}
-	public void setCreditCardExpirationDate(String creditCardExpirationDate) {
+	public void setCreditCardExpirationDate(Date creditCardExpirationDate) {
 		this.creditCardExpirationDate = creditCardExpirationDate;
 	}
 }

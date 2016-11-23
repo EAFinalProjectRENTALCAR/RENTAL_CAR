@@ -30,7 +30,9 @@ public class PersonalDetail {
 	private
 	String lastName;
 	
-    @Past @Temporal(TemporalType.DATE)
+    @Past(message="Input valid date of birth date")
+    @DateTimeFormat(pattern = "mm-dd-yyyy")
+    @Temporal(TemporalType.DATE)
 	private Date dateOfBirth;
 		
 	@NotEmpty(message = "The customer email must not be null")
@@ -46,16 +48,14 @@ public class PersonalDetail {
 
 	//Driver license
 	@NotEmpty(message = "The customer password must not be null")
-	private
-	String driverLicenceNumber;
+	private String driverLicenceNumber;
 	
 	private String driverLicenceUsingCountryOrState;
 	
-	@DateTimeFormat(pattern="MM/dd/yyyy")
-    @Future
-  // @NotEmpty(message="The driver licence expiration date must not be null")
-	private
-	String driverLicenceNumberExpirationDate;
+	@Temporal(TemporalType.DATE)
+	 @DateTimeFormat(pattern = "mm-dd-yyyy")
+	@Future(message="The expired date is future date")
+	private Date driverLicenceNumberExpirationDate;
 	
 	
 	
@@ -132,11 +132,11 @@ public class PersonalDetail {
 		this.driverLicenceUsingCountryOrState = driverLicenceUsingCountryOrState;
 	}
 
-	public String getDriverLicenceNumberExpirationDate() {
+	public Date getDriverLicenceNumberExpirationDate() {
 		return driverLicenceNumberExpirationDate;
 	}
 
-	public void setDriverLicenceNumberExpirationDate(String driverLicenceNumberExpirationDate) {
+	public void setDriverLicenceNumberExpirationDate(Date driverLicenceNumberExpirationDate) {
 		this.driverLicenceNumberExpirationDate = driverLicenceNumberExpirationDate;
 	}
 }

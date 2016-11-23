@@ -36,21 +36,15 @@
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
 		<property name="url" value="jdbc:mysql://localhost:3306/rentalcar?createDatabaseIfNotExist=true" />
 		<property name="username" value="root" />
-		<property name="password" value="MySQL" />
+		<property name="password" value="1234" />
 	</bean>
 	
 
 	<security:authentication-manager>
 		<security:authentication-provider>
-			<security:user-service>
-				<security:user name="admin" password="admin"
-					authorities="ROLE_ADMIN" />
-				<security:user name="user" password="user"
-					authorities="ROLE_USER" />
-			</security:user-service>
 			<!-- jdbc -->
 			<security:jdbc-user-service data-source-ref="secDataSource"
-				users-by-username-query="select username, password, enabled from customer where username = ?"
+				users-by-username-query="select username, password, enabled  from customer where username = ?"
 				authorities-by-username-query="select username, authority from customer where username = ?" />
 		</security:authentication-provider>
 	</security:authentication-manager>
