@@ -19,6 +19,8 @@ import org.springframework.stereotype.Component;
 @Entity
 @Component
 @Scope("session")
+//@Table(uniqueConstraints =
+//@UniqueConstraint(columnNames = "username"))
 public class Customer implements Serializable {
 
 	/**
@@ -42,11 +44,11 @@ public class Customer implements Serializable {
 	@Valid
 	private CreditCard creditCard;
 	
-	@Column(unique = true, nullable=false) 
-	@NotEmpty(message = "The customer username must not be null")
+	@Column(unique = true) 
+	@NotEmpty
 	private String username;
 
-	@Size(min = 6, message = "Password should be more than 5 characters")
+	@Size(min = 5, message = "{Customer.password}")
 	private String password;
 	
 	public enum Role {

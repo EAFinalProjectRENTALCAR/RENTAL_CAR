@@ -8,20 +8,19 @@ import org.hibernate.validator.constraints.NotEmpty;
 @Embeddable
 public class BillingAddress {
 	
-	@NotEmpty(message="The street name must not be null")
+	@NotEmpty
 	private String streetName;
 
-	@NotEmpty(message="The city name must not be null")
+	@NotEmpty
 	private String city;
 	
-	@NotEmpty(message="The state name must not be null")
+	@NotEmpty
 	private String state;
 	
-	@NotEmpty(message="The country name must not be null")
+	@NotEmpty
 	private String country;
 	
-	@NotEmpty(message="The zip code must be not null")
-	@Pattern(regexp="[0-9]+", message="Wrong zip")
+	@Pattern(regexp="^[0-9]{5}(?:-[0-9]{4})?$", message="{BillingAddress.zipCode.validFormat}")
 	private String zipCode;
 	
     public String getStreetName() {

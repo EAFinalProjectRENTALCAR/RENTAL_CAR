@@ -5,7 +5,7 @@ import java.util.Date;
 import javax.persistence.Embeddable;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.constraints.Future;
+import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.CreditCardNumber;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -15,7 +15,7 @@ public class CreditCard {
 	
 	private String creditcardType;
 	
-//	@Pattern(regexp = "\\d{11}", message = "Incorrect credit card Format")
+	@Pattern(regexp = "\\d{11}", message = "{CreditCard.creditCardNumber}")
 	@CreditCardNumber
 	private String creditCardNumber;
 	

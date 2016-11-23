@@ -44,10 +44,10 @@ public class CustomerController {
 	@RequestMapping(value="/addCustomer", method = RequestMethod.POST)
 	public String saveCustomer(@Valid @ModelAttribute("newCustomer") Customer customer, BindingResult bindingResult, RedirectAttributes redirectAttributes, HttpServletRequest request){
 		if(bindingResult.hasErrors()){
-//			List<ObjectError> allErrors = bindingResult.getAllErrors();
-//			for (ObjectError oe: allErrors) {
-//				System.out.println(oe.getDefaultMessage());
-//			}			
+			List<ObjectError> allErrors = bindingResult.getAllErrors();
+			for (ObjectError oe: allErrors) {
+				System.out.println(oe.getDefaultMessage());
+			}			
 			return "addCustomer";
 		}
 		customer.setAuthority(Role.ROLE_USER);

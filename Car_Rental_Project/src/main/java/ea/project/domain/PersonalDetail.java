@@ -18,43 +18,40 @@ public class PersonalDetail {
 	
 	private String title; 
 	
-	@NotEmpty(message="The first name must not be null")
+	@NotEmpty
 	private
 	String firstName;
 	
-	@NotEmpty(message="The middle name must not be null")
+	@NotEmpty
 	private
 	String middleName;
 	
-	@NotEmpty(message="The last name must not be null")
+	@NotEmpty
 	private
 	String lastName;
 	
-    @Past(message="Input valid date of birth date")
+    //@Past(message="{PersonalDetail.dateOfBirth}")
     @DateTimeFormat(pattern = "mm/dd/yyyy")
     @Temporal(TemporalType.DATE)
 	private Date dateOfBirth;
 		
-	@NotEmpty(message = "The customer email must not be null")
+	@NotEmpty
 	@Email
 	private String customerEmail;
 	
-	 //validating phone number with -, . or spaces
-	//@Pattern(regexp = "\\d{3}[-\\.\\s]\\d{3}[-\\.\\s]\\d{4}", message = "Incorrect Phone Format")
-	@NotEmpty(message = "The phone must not be valid")
 	@Pattern(regexp="^\\(?(\\d{3})\\)?[- ]?(\\d{3})[- ]?(\\d{4})$",
-    message="The phone must not be valid")
+    message="{PersonalDetail.customerPhone}")
 	private String customerPhone;
 
 	//Driver license
-	@NotEmpty(message = "The customer password must not be null")
+	@NotEmpty
 	private String driverLicenceNumber;
 	
 	private String driverLicenceUsingCountryOrState;
 	
 	@Temporal(TemporalType.DATE)
-	 @DateTimeFormat(pattern = "mm/dd/yyyy")
-	//@Future(message="The expired date is future date")
+	@DateTimeFormat(pattern = "mm/dd/yyyy")
+	//@Future(message="{PersonalDetail.driverLicenceNumberExpirationDate}")
 	private Date driverLicenceNumberExpirationDate;
 	
 	
