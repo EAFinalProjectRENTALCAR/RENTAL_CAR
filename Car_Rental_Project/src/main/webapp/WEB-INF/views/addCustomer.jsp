@@ -92,7 +92,7 @@
 				  </tr>
 				  
 				  <tr>
-				    <td>User Name: *</td>
+				    <td><!-- User Name: --> <spring:message code="username" text="default text" />*</td>
 				    <td>
 				      <form:input id="username" type="text" path="username" />	
 				      <form:errors path="username" cssClass="error" />	
@@ -100,7 +100,7 @@
 				  </tr>
 				  
 				  <tr>
-				    <td>Password: *</td>
+				    <td><!-- Password: --><spring:message code="password" text="default text" /> *</td>
 				    <td>
 				      <form:input id="password" type="password" path="password" />
 				      <form:errors path="password" cssClass="error" /> 		

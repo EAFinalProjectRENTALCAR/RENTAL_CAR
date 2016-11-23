@@ -39,31 +39,35 @@
 
 <body>
 <div id="login-box">
-	<h2 align="center">Login Page</h2>
-
+	<h2 align="center"><spring:message code="loginpage" text="default text" /></h2>
+	<spring:message code="language" text="default text" /> &nbsp; &nbsp;<a href="?language=en_US">English</a>|<a href="?language=vn_VN">Viet Nam</a><br><br>
 	<form action="<spring:url value="/postLogin"></spring:url>"	method="post">
 		<table>
 			<tr>
-				<td><label for="userName"> User Name : </label> </td>
-				<td><input type="text"
+				<td width="50%"><!-- <label for="userName"> User Name : </label>  -->
+					<spring:message code="username" text="default text" />
+				</td>
+				<td  width="50%"><input type="text"
 					name="userName" id="userName" value="" /></td>
 			</tr>
 			<tr>
-				<td><label for="password"> Password: </label></td>
+				<td><!-- <label for="password"> Password: </label> -->
+					<spring:message code="password" text="default text" />
+				</td>
 				<td><input id="password"
 					name="password" type="password" /></td>
 			</tr>
 			<tr>
 				<td colspan="2" align="right">
-					<input type="submit" value="Login"/> 
-					<%-- <spring:url value="/vehicle/showVehicle" var="show" />
-					<a href="${show}"><button>Cancel</button></a> --%>
+					<spring:message code="login" var="Login"></spring:message>
+					<input type="submit" value="${Login}"/> 		
 				</td>
 			</tr>
 		</table>
 	</form>
+	<spring:message code="cancel" var="cancel"></spring:message>
  	<spring:url value="/vehicle/showVehicle" var="show" />
-		<a href="${show}"><button>Cancel</button></a>
+		<a href="${show}"><input type="submit" value="${cancel}"/></a>
 </div>
 </body>
 </html>
